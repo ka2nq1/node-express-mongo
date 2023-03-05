@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <h1><%= title%>:</h1>
+    <ul class="contacts">
+        <%if (!!contacts.length) {%>
+            <% contacts.map(({link, name}, index) => {%>
+                <li key="<%= index %>">
+                    <a href="<%= link %>">
+                        <%= name %>
+                    </a>
+                </li>
+            <%})%>
+        <%}%>
+    </ul>
+</body>
+
+</html>
